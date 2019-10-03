@@ -1,0 +1,65 @@
+Color Index,Color Name,Html Color
+0,Black,#000000
+1,White,#FFFFFF
+2,Red,#FF0000
+3,Bright Green,#00FF00
+4,Blue,#0000FF
+5,Yellow,#FF00
+6,Pink,#FF00FF
+7,Turquoise,#00FFFF
+8,Black,#000000
+9,White,#FFFFFF
+10,Red,#FF0000
+11,Bright Green,#00FF00
+12,Blue,#0000FF
+13,Yellow,#FFFF00
+14,Pink,#FF00FF
+15,Turquoise,#00FFFF
+16,Dark Red,#800000
+17,Green,#008000
+18,Dark Blue,#000080
+19,Dark Yellow,#808000
+20,Violet,#800080
+21,Teal,#008080
+22,Gray-25%,#C0C0C0
+23,Gray-50%,#808080
+24,Periwinkle,#9999FF
+25,Plum,#993366
+26,Ivory,#FFFFCC
+27,Light Turquoise,#CCFFFF
+28,Dark Purple,#660066
+29,Coral,#FF8080
+30,Ocean Blue,#0066CC
+31,Ice Blue,#CCCCFF
+32,Dark Blue,#000080
+33,Pink,#FF00FF
+34,Yellow,#FFFF00
+35,Turquoise,#00FFFF
+36,Violet,#800080
+37,Dark Red,#800000
+38,Teal,#008080
+39,Blue,#0000FF
+40,Sky Blue,#00CCFF
+41,Light Turquoise,#CCFFFF
+42,Light Green,#CCFFCC
+43,Light Yellow,#FFFF99
+44,Pale Blue,#99CCFF
+45,Rose,#FF99CC
+46,Lavender,#CC99FF
+47,Tan,#FFCC99
+48,Light Blue,#3366FF
+49,Aqua,#33CCCC
+50,Lime,#99CC00
+51,Gold,#FFCC00
+52,Light Orange,#FF9900
+53,Orange,#FF6600
+54,Blue-Gray,#666699
+55,Gray-Gray40%,#969696
+56,Dark Teal,#003366
+57,Sea Green,#339966
+58,Dark Green,#003300
+59,Olive Green,#333300
+60,Brown,#993300
+61,Plum,#993366
+62,Indigo,#333399
+63,Gray-80%,#333333
