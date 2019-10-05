@@ -11,18 +11,18 @@ import lombok.Setter;
 public class GridSearcherResult {
 	private double c;
 	private double g;
-	private double e;
+	private double p;
 	private double mse;
 
-	public GridSearcherResult(double c, double g, double e, double mse) {
+	public GridSearcherResult(double c, double g, double p, double mse) {
 		this.c = c;
 		this.g = g;
-		this.e = e;
+		this.p = p;
 		this.mse = mse;
 	}
 
 	@Override
 	public String toString() {
-		return "-c " + c + " -g " + g + " | MSE = " + mse;
+		return "-c " + c + " -g " + g + " -p " + p + " | MSE = " + mse;
 	}
 }

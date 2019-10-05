@@ -25,16 +25,16 @@ public class GridSearcher {
 		this.input = input;
 	}
 
-	public GridSearcherResult search() throws IOException {
+	public GridSearcherResult search() {
 		double c = 10;
 		int order = 0;
 		List<GridSearcherResult> results = new ArrayList<>();
 
-		while (-15 <= c && c <= 25 && order <= 32) {
+		while (-15 <= c && c <= 32 && order <= 32) {
 			// 既に計算した値の場合は計算せず反転
-			List<Double> list = new ArrayList<Double>();
+			List<Double> list = new ArrayList<>();
 			for (GridSearcherResult result : results) {
-				list.add(result.getE());
+				list.add(result.getP());
 			}
 			if (list.contains(c)) {
 				order++;
@@ -56,16 +56,16 @@ public class GridSearcher {
 		return results.stream().min(Comparator.comparing(GridSearcherResult::getMse)).orElse(results.get(0));
 	}
 
-	private GridSearcherResult search(double c) throws IOException {
+	private GridSearcherResult search(double c) {
 		double g = -10;
 		int order = 0;
 		List<GridSearcherResult> results = new ArrayList<>();
 
 		while (-25 <= g && g <= 0 && order <= 32) {
 			// 既に計算した値の場合は計算せず反転
-			List<Double> list = new ArrayList<Double>();
+			List<Double> list = new ArrayList<>();
 			for (GridSearcherResult result : results) {
-				list.add(result.getE());
+				list.add(result.getP());
 			}
 			if (list.contains(g)) {
 				order++;
@@ -87,16 +87,16 @@ public class GridSearcher {
 		return results.stream().min(Comparator.comparing(GridSearcherResult::getMse)).orElse(results.get(0));
 	}
 
-	private GridSearcherResult search(double c, double g) throws IOException {
+	private GridSearcherResult search(double c, double g) {
 		double e = -10;
 		int order = 0;
 		List<GridSearcherResult> results = new ArrayList<>();
 
 		while (-25 <= e && e <= 15 && order <= 32) {
 			// 既に計算した値の場合は計算せず反転
-			List<Double> list = new ArrayList<Double>();
+			List<Double> list = new ArrayList<>();
 			for (GridSearcherResult result : results) {
-				list.add(result.getE());
+				list.add(result.getP());
 			}
 			if (list.contains(e)) {
 				order++;
@@ -118,7 +118,7 @@ public class GridSearcher {
 		return results.stream().min(Comparator.comparing(GridSearcherResult::getMse)).orElse(results.get(0));
 	}
 
-	private GridSearcherResult search(double c, double g, double e) {
+	private GridSearcherResult search(double c, double g, double p) {
 		// thundersvmで3交差検証
 		List<String> commands = new ArrayList<>();
 		commands.add("thundersvm-train");
@@ -130,8 +130,8 @@ public class GridSearcher {
 		commands.add(Double.toString(Math.pow(2, c)));
 		commands.add("-g");
 		commands.add(Double.toString(Math.pow(2, g)));
-		commands.add("-e");
-		commands.add(Double.toString(Math.pow(2, e)));
+		commands.add("-p");
+		commands.add(Double.toString(Math.pow(2, p)));
 		commands.add(input);
 
 		// MSEの出力に一致する正規表現
@@ -158,10 +158,10 @@ public class GridSearcher {
 			err.printStackTrace();
 		}
 
-		return new GridSearcherResult(c, g, e, mse);
+		return new GridSearcherResult(c, g, p, mse);
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		// グリッドサーチを行う
 		GridSearcher searcher = new GridSearcher("src/main/resources/input.scale");
 		GridSearcherResult result = searcher.search();
